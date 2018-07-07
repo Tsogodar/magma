@@ -1,0 +1,16 @@
+{
+  "server":{
+    "port":3000,
+    "ssl":false
+  },
+  "db":{
+    "provider":"mongodb",
+    "host":"127.0.0.1",
+    "port":27017,
+    "database":"magma",
+    "auth":{
+      "username":"root",
+      "password":"root"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "magma",
+  "version": "1.0.0",
+  "description": "Node.js CMS",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon ./config/server.js"
+  },
+  "keywords": [],
+  "author": "Marcin Gryczon",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "1.18.3",
+    "express": "4.16.3",
+    "express-handlebars": "3.0.0",
+    "express-validator": "5.2.0",
+    "materialize-css": "0.100.2",
+    "mongoose": "5.2.1",
+    "mysql": "2.15.0",
+    "spdy": "3.4.7"
+  },
+  "devDependencies": {
+    "morgan": "1.9.0",
+    "mocha": "5.2.0",
+    "concurrently": "3.6.0",
+    "nodemon": "1.17.5"
+  }
+}
