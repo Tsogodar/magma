@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "Node.js CMS",
   "main": "app.js",
+  "preferGlobal": true,
+  "bin": "./src/cli.js",
   "scripts": {
     "start": "nodemon ./config/server.js"
   },
@@ -17,7 +19,8 @@
     "materialize-css": "0.100.2",
     "mongoose": "5.2.1",
     "mysql": "2.15.0",
-    "spdy": "3.4.7"
+    "spdy": "3.4.7",
+    "commander": "2.16.0"
   },
   "devDependencies": {
     "morgan": "1.9.0",
