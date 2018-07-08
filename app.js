@@ -15,6 +15,18 @@ app.use(bodyParser.urlencoded({extended: 'false'}));
 app.use(express.static(path.join(__dirname, 'assets')));
 
 app.use('/', require('./controllers/homePage'));
+app.use('/dupa', require('./controllers/dupa'));
+app.use('/dupa', require('./controllers/dupa'));
+app.use('/dupa', require('./controllers/dupa'));
+app.use('/dupa', require('./controllers/dupa'));
+app.use('/dupa', require('./controllers/dupa'));
+app.use('/dupa', require('./controllers/dupa'));
+app.use('/dupa', require('./controllers/dupa'));
+app.use('/dupa', require('./controllers/dupa'));
+app.use('/dupa', require('./controllers/dupa'));
+app.use('/dupa', require('./controllers/dupa'));
+app.use('/dupa', require('./controllers/dupa'));
+app.use('/dupa', require('./controllers/dupa'));
 
 app.use((req, res) => {
    let error=new Error();
