@@ -1,7 +1,11 @@
 {
   "server":{
     "port":3000,
-    "ssl":false
+    "ssl":false,
+    "cluster":{
+      "enable":true,
+      "cores": 2
+    }
   },
   "db":{
     "provider":"mongodb",
