@@ -28,7 +28,7 @@ module.exports = {
         readline.on('line', (line) => {
             ++lineNumber;
             if (lineNumber === 4) {
-                let injection = `res.render(\`pages/${name}.hbs\', {name : \'${name}\'});`;
+                let injection = `res.render(\`pages/${name}.hbs\`, {name : \'${name}\'});`;
                 let controllerFile = fs.readFileSync(controllerPath).toString().split("\n");
                 controllerFile.splice(lineNumber, 0, injection);
                 let updatedControllerFile = controllerFile.join("\n");
