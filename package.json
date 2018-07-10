@@ -20,7 +20,8 @@
     "mongoose": "5.2.1",
     "mysql": "2.15.0",
     "spdy": "3.4.7",
-    "commander": "2.16.0"
+    "commander": "2.16.0",
+    "nodemailer": "4.6.7"
   },
   "devDependencies": {
     "morgan": "1.9.0",
