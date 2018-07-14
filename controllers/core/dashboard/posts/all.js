@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-res.render(`dashboard/dashboard.hbs`, {layout:'dashboard'});
+res.render(`core/dashboard/posts/all.hbs`, {layout:'dashboard'});
 });
 
 

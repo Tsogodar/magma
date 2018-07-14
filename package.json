@@ -12,18 +12,19 @@
   "author": "Marcin Gryczon",
   "license": "MIT",
   "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^10.1.0",
     "body-parser": "1.18.3",
+    "commander": "2.16.0",
     "express": "4.16.3",
     "express-handlebars": "3.0.0",
+    "express-photo-gallery": "1.0.9",
     "express-validator": "5.2.0",
+    "lowdb": "1.0.0",
     "materialize-css": "1.0.0-rc.2",
     "mongoose": "5.2.3",
     "mysql": "2.15.0",
-    "spdy": "3.4.7",
-    "commander": "2.16.0",
     "nodemailer": "4.6.7",
-    "express-photo-gallery": "1.0.9",
-    "lowdb": "1.0.0"
+    "spdy": "3.4.7"
   },
   "devDependencies": {
     "concurrently": "3.6.0",
