@@ -2,26 +2,26 @@
 <form method="post">
     <div class="row">
         <div class="input-field col s12 l8">
-            <input id="title" type="text" class="validate">
+            <input id="title" type="text" name="title" class="validate">
             <label for="title">Title field</label>
         </div>
         <div class="input-field col s12 l4">
-            <select>
-                <option value="1">Category 1</option>
-                <option value="2">Category 2</option>
-                <option value="3">Category 3</option>
+            <select name="category">
+                {{#each categories}}
+                    <option value="{{this}}">{{this}}</option>
+                {{/each}}
             </select>
             <label>Category</label>
         </div>
     </div>
     <div class="row">
         <div class="input-field col s12">
-            <textarea id="textarea1"></textarea>
+            <textarea name="body" id="textarea1"></textarea>
         </div>
     </div>
     <div class="row">
         <div class="input-field col s12 right-align">
-            <a type="submit" class="waves-effect waves-light btn orange darken-3">Save</a>
+            <button type="submit" class="waves-effect waves-light btn orange darken-3">Save</button>
         </div>
     </div>
 </form>

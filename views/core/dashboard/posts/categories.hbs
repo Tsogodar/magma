@@ -1,0 +1,26 @@
+<h4>Add new category</h4>
+<form method="post">
+    <div class="row">
+        <div class="input-field col s12 l8">
+            <input id="name" type="text" name="name" class="validate">
+            <label for="name">Category name</label>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 l8">
+                <textarea name="description" id="textarea1" class="materialize-textarea"></textarea>
+                <label for="textarea1">Category description</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 l8 right-align">
+                <button type="submit" class="waves-effect waves-light btn orange darken-3">Save</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+{{#if toast}}
+    <script>
+        M.toast({html: 'Category saved', classes: 'rounded'});
+    </script>
+{{/if}}

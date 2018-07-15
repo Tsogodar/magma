@@ -20,15 +20,17 @@ app.engine('.hbs', exphbs({
 }));
 app.set('view engine', '.hbs');
 app.set('views', path.join(__dirname, 'views'));
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: 'false'}));
+app.use(express.static(path.join(__dirname, 'assets')));
+
 app.use('/dashboard', require('./controllers/core/dashboard/dashboard'));
 app.use('/dashboard/post/all', require('./controllers/core/dashboard/posts/all'));
 app.use('/dashboard/post/add', require('./controllers/core/dashboard/posts/add'));
 app.use('/dashboard/post/edit', require('./controllers/core/dashboard/posts/edit'));
 app.use('/dashboard/post/remove', require('./controllers/core/dashboard/posts/remove'));
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: 'false'}));
-app.use(express.static(path.join(__dirname, 'assets')));
+app.use('/dashboard/post/categories', require('./controllers/core/dashboard/posts/categories'));
 
 app.use('/', require('./controllers/homePage'));
 
