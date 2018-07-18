@@ -20,7 +20,7 @@ module.exports = {
         Categories.find({}).then(callback)
     },
 
-    getCategoryById: (categoryId,callback) => {
+    getCategoryById: (categoryId, callback) => {
         Categories.findOne({_id: categoryId}).then(callback)
     },
 
@@ -28,6 +28,13 @@ module.exports = {
         const newCategory = new Categories(object);
         newCategory.save().then(() => {
             res.render(`core/dashboard/categories/categories.hbs`, {layout: 'dashboard', toast: true})
+        });
+    },
+
+    update: (object, res) => {
+        console.log(object)
+        Categories.update({_id: object.id}, {$set: object}).then(() => {
+            res.redirect(`/dashboard/post/categories`)
         });
     }
 };

@@ -13,8 +13,9 @@ router.get('/:categoryId', (req, res) => {
         })
     });
 });
-// router.post('/', (req, res) => {
-//     categoriesModel.save({name: req.body.name, description: req.body.description}, res)
-// })
+
+router.post('/:categoryId', (req, res) => {
+    categoriesModel.update({id: req.params.categoryId, name: req.body.name, description: req.body.description}, res)
+});
 
 module.exports = router;
