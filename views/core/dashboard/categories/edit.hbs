@@ -1,0 +1,37 @@
+<div class="row">
+    <form method="post" class="col l8">
+        <h4>Edit category</h4>
+        <div class="input-field col s12 l11">
+            <input id="name" type="text" name="name" class="validate" value="{{category.name}}" required>
+            <label for="name">Category name</label>
+        </div>
+        <div class="input-field col s12 l11">
+            <textarea name="description" id="textarea1" class="validate materialize-textarea" required>{{category
+            .description}}</textarea>
+            <label for="textarea1">Category description</label>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 l11 right-align">
+                <button type="submit" class="waves-effect waves-light btn orange darken-3">Save</button>
+            </div>
+        </div>
+    </form>
+    <div class="col l4">
+        <h4>Categories</h4>
+        {{#each categories}}
+            <div class="valign-wrapper">
+                <h6 class="tooltipped" data-tooltip="{{this.description}}">{{this.name}}</h6>
+                <a href="/dashboard/post/categories/edit/{{this.id}}"><i class="material-icons">create</i></a>
+                <a href="#"><i class="material-icons">clear</i></a>
+            </div>
+        {{/each}}
+    </div>
+</div>
+<script>
+    M.Tooltip.init(document.querySelectorAll('.tooltipped'), {margin: 0, position: 'left'});
+</script>
+{{#if toast}}
+    <script>
+        M.toast({html: 'Category saved', classes: 'rounded'});
+    </script>
+{{/if}}

@@ -1,14 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const categoriesModel=require('../../../../models/core/categories')
+const categoriesModel = require('../../../../models/core/categories')
 
 router.get('/', (req, res) => {
-    res.render(`core/dashboard/posts/add.hbs`, {layout: 'dashboard',categories:categoriesModel.getAll()});
+    categoriesModel.getCategories(data => {
+        res.render(`core/dashboard/posts/add.hbs`, {layout: 'dashboard', categories: data});
+    })
+
 });
 
-router.post('/',(req,res)=>{
-    console.log(req.body)
-    // categoriesModel.save({name:req.body.title,description:req.body.title},res)
+router.post('/', (req, res) => {
+    categoriesModel.save({name:req.body.title,description:req.body.description},res)
 })
 
 module.exports = router;

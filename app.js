@@ -30,7 +30,8 @@ app.use('/dashboard/post/all', require('./controllers/core/dashboard/posts/all')
 app.use('/dashboard/post/add', require('./controllers/core/dashboard/posts/add'));
 app.use('/dashboard/post/edit', require('./controllers/core/dashboard/posts/edit'));
 app.use('/dashboard/post/remove', require('./controllers/core/dashboard/posts/remove'));
-app.use('/dashboard/post/categories', require('./controllers/core/dashboard/posts/categories'));
+app.use('/dashboard/post/categories', require('./controllers/core/dashboard/categories/categories'));
+app.use('/dashboard/post/categories/edit', require('./controllers/core/dashboard/categories/edit'));
 
 app.use('/', require('./controllers/homePage'));
 
