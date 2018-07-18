@@ -27,7 +27,7 @@ module.exports = {
     save: (object, res) => {
         const newCategory = new Categories(object);
         newCategory.save().then(() => {
-            res.render(`core/dashboard/posts/categories.hbs`, {layout: 'dashboard', toast: true})
+            res.render(`core/dashboard/categories/categories.hbs`, {layout: 'dashboard', toast: true})
         });
     }
 };
