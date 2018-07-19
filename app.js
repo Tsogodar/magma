@@ -5,6 +5,9 @@ const path = require('path');
 const exphbs  = require('express-handlebars');
 const db=require('./config/database');
 const app = express();
+const session=require('express-session');
+const connectFlash = require('connect-flash')
+const expressMessages = require('express-messages')
 
 app.use('/materialize', express.static(__dirname + '/node_modules/materialize-css/dist/'));
 app.use('/ckeditor', express.static(__dirname + '/node_modules/@ckeditor/ckeditor5-build-classic/build/'));
@@ -24,6 +27,19 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: 'false'}));
 app.use(express.static(path.join(__dirname, 'assets')));
+
+app.use(session({
+    secret: 'yugd76d7guvys7dfgsgd7tf7t5aa',
+    resave: true,
+    saveUninitialized: true,
+}))
+
+app.use(connectFlash())
+
+app.use((req, res,next)=> {
+    res.locals.messages=expressMessages(req,res)
+    next();
+})
 
 app.use('/dashboard', require('./controllers/core/dashboard/dashboard'));
 app.use('/dashboard/post/all', require('./controllers/core/dashboard/posts/all'));

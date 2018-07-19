@@ -15,7 +15,7 @@ router.get('/:categoryId', (req, res) => {
 });
 
 router.post('/:categoryId', (req, res) => {
-    categoriesModel.update({id: req.params.categoryId, name: req.body.name, description: req.body.description}, res)
+    categoriesModel.update({id: req.params.categoryId, name: req.body.name, description: req.body.description},req, res)
 });
 
 module.exports = router;

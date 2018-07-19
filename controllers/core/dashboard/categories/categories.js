@@ -6,7 +6,8 @@ router.get('/', (req, res) => {
     categoriesModel.getFullCategories(data=>{
         res.render(`core/dashboard/categories/categories.hbs`, {
             layout: 'dashboard',
-            categories: data
+            categories: data,
+            toast:res.locals.messages()
         });
     })
 });

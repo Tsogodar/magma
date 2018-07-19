@@ -24,7 +24,10 @@
     "mongoose": "5.2.3",
     "mysql": "2.15.0",
     "nodemailer": "4.6.7",
-    "spdy": "3.4.7"
+    "spdy": "3.4.7",
+    "express-session": "1.15.6",
+    "connect-flash": "0.1.1",
+    "express-messages": "1.0.1"
   },
   "devDependencies": {
     "concurrently": "3.6.0",

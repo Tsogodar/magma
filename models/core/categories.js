@@ -31,9 +31,9 @@ module.exports = {
         });
     },
 
-    update: (object, res) => {
-        console.log(object)
+    update: (object,req, res) => {
         Categories.update({_id: object.id}, {$set: object}).then(() => {
+            req.flash('tooltip', true)
             res.redirect(`/dashboard/post/categories`)
         });
     }
